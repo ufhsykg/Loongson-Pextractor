@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/ufhsykg/linux/IMX/JunBianOS/include", 
+                "/home/ufhsykg/linux/IMX/JunBianOS/arch/arm/include", 
+                "/home/ufhsykg/linux/IMX/JunBianOS/arch/arm/include/generated/"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

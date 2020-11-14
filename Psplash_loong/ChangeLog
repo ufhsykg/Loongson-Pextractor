@@ -1,0 +1,159 @@
+2014-10-07  Olaf Mandel <o.mandel@menlosystems.com>
+
+	* psplash-fb.c:
+	* psplash-fb.h:
+	* psplash.c:
+	Images: handle rowstride != width*bytes_per_pixel
+
+	* psplash-config.h:
+	* psplash.c:
+	* psplash.h:
+	Make appearance more configurable:
+	  - Allow not showing the startup message
+	  - Make the screen-split (between image and progress bar)
+	    configurable
+	  - Allow for fullscreen image (overlaid by progress bar)
+
+2009-05-28  Richard Purdie <rpurdie@linux.intel.com>
+
+	* psplash-fb.c:
+	* psplash-fb.h:
+	* psplash.h:
+	Fix so the code honours whatever bit order the display reports with 
+	fast paths for the most common cases.
+
+2009-05-19  Richard Purdie <rpurdie@linux.intel.com>
+
+	* psplash-fb.c:
+	* psplash-poky-img.h:
+	* psplash.c
+	* Makefile.am:
+	Fix colour read order from RLE images (R & B swapped)
+	Add handling for alpha channel in images
+	Update the Poky RLE image
+	Change the OpenedHand logo for the Poky one
+
+2008-11-10  Samuel Ortiz  <sameo@linux.intel.com>
+
+	* psplash.c:
+	unlink the FIFO and switch the console back when no fb is found.
+
+
+2008-08-12  Richard Purdie  <rpurdie@openedhand.com>
+
+	* psplash.c:
+	Unlink the fifo when exitting.
+
+2008-08-12  Richard Purdie  <rpurdie@openedhand.com>
+
+	* psplash.c:
+	Allow newline terminated commands as well as null terminated ones 
+	through the fifo.
+
+2008-05-27  Robert Bragg  <bob@openedhand.com>
+	
+	* psplash-fb.c:
+	Added support for attempting to configure a 32/16bpp fbdev pixel
+	format, if the default (e.g. 8bpp) is not supported.
+
+2008-02-21  Rob Bradford  <rob@openedhand.com>
+
+	* psplash.c: (main):
+	Revert artwork. Needs more love.
+
+2008-02-21  Rob Bradford  <rob@openedhand.com>
+
+	* psplash-poky-img.h:
+	* psplash.c: (main):
+	Try new artwork.
+
+2007-03-28  Richard Purdie  <rpurdie@openedhand.com>
+
+	* psplash.c:
+	Add support for negative progress values
+
+2007-02-16  Matthew Allum  <mallum@openedhand.com>
+
+	* README:
+	* configure.ac:
+	* psplash.doap:
+	Update for 0.1 release
+
+2006-12-22  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash-fb.c:
+	* psplash.c:
+	More rotation tweaks
+
+2006-12-22  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash.c:
+	Whoops, actually set the angle config option
+
+2006-12-22  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash-fb.c:
+	* psplash-fb.h:
+	* psplash.c:
+	Add -angle cmd line arg, hopefully fix rotation
+
+2006-12-19  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash-fb.c:
+	* psplash-fb.h:
+	* psplash.c:
+	Add some as yet tested basic rotation code.
+	* psplash.h:
+	Disable DBG output by default.
+
+2006-11-21  Richard Purdie  <rpurdie@openedhand.com>
+
+	* psplash-write.c:
+	Disable error message when the fifo doesn't exist.
+
+2006-11-21  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash.c: (main):
+	Add some more commenting
+	* psplash.doap:
+	Add DOAP file.
+
+2006-09-28  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash-bar-img.h:
+	pixel pop a little
+	* psplash.c: (psplash_draw_progress), (main):
+	Move bar up a little.
+
+2006-09-28  Matthew Allum  <mallum@openedhand.com>
+
+	* psplash.c: (psplash_draw_progress), (main):
+	img positioning tweaks.
+
+2006-09-28  Matthew Allum  <mallum@openedhand.com>
+
+	* Makefile.am:
+	* make-image-header.sh:
+	* psplash-bar-img.h:
+	* psplash-hand-img.h:
+	* psplash.c: (psplash_draw_msg), (psplash_draw_progress), (main):
+	Add new hopefully nicer untested images.
+	
+	* psplash-image.h:
+	Remove
+
+2006-09-08  Matthew Allum  <mallum@openedhand.com>
+
+	* Makefile.am:
+	* radeon-font.h:
+	Add 'compiled' font.
+
+	* psplash-fb.c:
+	* psplash-fb.h:
+	* psplash.c:
+	* psplash.h:
+	Add basic font/text rendering support 
+	Add remote msg suuport (psplash-write 'MSG hello world')
+	Add cmd line switch to disable console switch
+	Move console switch after fifo set up.
+
