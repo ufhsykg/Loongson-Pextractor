@@ -18,6 +18,8 @@
 * make
 * 拷贝psplash与psplash-write至龙芯派的/usr/bin目录中
 
+# 龙芯派驱动调试步骤
+* cd Loongson drive
 
 # 以下为文件目录
 ```
