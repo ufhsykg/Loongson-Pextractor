@@ -1,5 +1,5 @@
 # Loongson-Pextractor
-![JUNBIAN](logo-JunBian.png)
+![JUNBIAN](logo-JunBian.jpg)
 ```
 │  .gitattributes
 │  .gitignore
