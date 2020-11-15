@@ -1,0 +1,42 @@
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+#Psplash SH
+touch /var/lock/subsys/local
+ read CMDLINE < /proc/cmdline
+ for x in $CMDLINE; do
+        case $x in
+        psplash=false)
+        echo "Boot splashscreen disabled"
+        exit 0;
+                ;;
+        esac
+ done
+
+ export TMPDIR=/mnt/.psplash
+ mount tmpfs -t tmpfs $TMPDIR -o,size=40k
+
+ rotation=0
+ if [ -e /etc/rotation ]; then
+    read rotation < /etc/rotation
+ fi
+
+ /usr/bin/psplash --angle $rotation &
+
+sleep 10s
+su:loongson
+
+#Load Module
+insmod /home/loongson/junbian/g/junbian.ko
+
+#Start Qt APP
+xinit /home/loongson/junbian/junjun/client 192.168.1.106 1234 &
