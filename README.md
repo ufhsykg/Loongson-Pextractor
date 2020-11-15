@@ -1,5 +1,23 @@
 # Loongson-Pextractor
 ![JUNBIAN](logo-JunBian.jpg)
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://travis-ci.org/xialonghua/kotmvp.svg?branch=master)](https://travis-ci.org/xialonghua/kotmvp) 
+本项目为基于龙芯派二代的人脸识别智能物联网抽纸机，项目包含MIPS驱动代码
+以及运行于龙芯派二代的客户端及运行于发行版Linux（测试为Ubuntu）的服务端的Qt应用代码
+附赠UI设计的PSD文件与建模文件
+
+# Psplash调试步骤
+* cd Psplash_loong/
+* ./make-image-header.sh JunBian.png POKY    //其中JunBian.png可改成其他图片
+* 如果修改过文件名，请将psplash.c中的头文件修改为你修改的图片名
+* apt-get install autoconf automake
+* ./autogen.sh
+* ./configure --prefix=/home/ufhsykg/Loongson-Pextractor/psplash/ --host=mips CC=/opt/gcc-4.9.3-64-gnu/bin/mips64el-linux-gcc
+* make
+* 拷贝psplash与psplash-write至龙芯派的/usr/bin目录中
+
+
+# 以下为文件目录
 ```
 │  .gitattributes
 │  .gitignore
