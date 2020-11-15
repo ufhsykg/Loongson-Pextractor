@@ -2,6 +2,8 @@
 ![JUNBIAN](logo-JunBian.jpg)
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/xialonghua/kotmvp.svg?branch=master)](https://travis-ci.org/xialonghua/kotmvp) 
+
+# 关于本项目
 本项目为基于龙芯派二代的人脸识别智能物联网抽纸机，项目包含MIPS驱动代码
 以及运行于龙芯派二代的客户端及运行于发行版Linux（测试为Ubuntu）的服务端的Qt应用代码
 附赠UI设计的PSD文件与建模文件
