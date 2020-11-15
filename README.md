@@ -1,5 +1,5 @@
 # Loongson-Pextractor
-![JUNBIAN](https://imgchr.com/i/DFyCKs)
+[![DFyCKs.png](https://s3.ax1x.com/2020/11/15/DFyCKs.png)](https://imgchr.com/i/DFyCKs)
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/xialonghua/kotmvp.svg?branch=master)](https://travis-ci.org/xialonghua/kotmvp) 
 
