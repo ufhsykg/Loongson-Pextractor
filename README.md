@@ -19,7 +19,20 @@
 * 拷贝psplash与psplash-write至龙芯派的/usr/bin目录中
 
 # 龙芯派驱动调试步骤
-* cd Loongson drive
+* cd Loongson-drive/
+* 修改Makefile文件
+```c++
+KERNELDIR := /home/ufhsykg/Desktop/nmsl/linux-3.10
+CURRENT_PATH := $(shell pwd)
+obj-m := junbian.o
+build: kernel_modules
+kernel_modules:
+	$(MAKE)  ARCH=mips CROSS_COMPILE=/opt/gcc-4.9.3-64-gnu/bin/mips64el-linux-  -C $(KERNELDIR) M=$(CURRENT_PATH) modules
+clean:
+	$(MAKE) -C $(KERNELDIR) M=$(CURRENT_PATH) clean
+```
+* 修改内核位置及交叉编译链位置
+* make
 
 # 以下为文件目录
 ```
@@ -29,7 +42,7 @@
 │  README.md
 │  Readme.txt
 │  
-├─Loongson drive
+├─Loongson-drive
 │  ├─bin
 │  │      junbian.ko
 │  │      JUNNEW
@@ -111,7 +124,7 @@
 │  └─loongson-images
 │          JunBian.png
 │          
-├─QT application
+├─QT-application
 │  ├─Client(for Loongson Pi 2)
 │  │  ├─bin
 │  │  │  │  client
@@ -209,7 +222,7 @@
 │              usermngr.cpp
 │              usermngr.h
 │              
-├─Solid design
+├─Solid-design
 │  ├─Cutdev
 │  │      基座上层.SLDPRT
 │  │      电磁铁装置.SLDPRT
@@ -223,10 +236,10 @@
 │          电动机固定架.SLDPRT
 │          送纸装置(1).SLDASM
 │          
-├─Startup scripts
+├─Startup-scripts
 │      rc.local
 │      
-└─UI design
+└─UI-design
         comBG.psd
         StartUp.psd
         sysbg.psd
